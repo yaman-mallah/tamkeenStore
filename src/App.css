@@ -1,0 +1,161 @@
+:root {
+  --white: #ffff;
+  --lightGrey: #9a9a9a;
+  --border: #d7d7d7;
+  --lightGrey2: #f5f5f5;
+  --red: #f0345d;
+  --red2: #d34b69;
+  --hover: #ee6e8a;
+  --black: #1c1c1c;
+  --main: #f7fafc;
+  --bg: #eff2f4;
+  --darkGrey: #505050;
+  --grey: #8b96a5;
+  --grey2: #bdc4cd;
+  --bg2: #eff2f4;
+  --transparentRed: #ff4d7426; 
+  --transparentBlack: rgba(0, 0, 0, 0.1);
+  --transparentWhite: rgba(243, 243, 243, 0.6);
+
+}
+
+.dark {
+  --white: #121212;      
+  --main: #1e1e1e;       
+  --bg: #0f0f0f;         
+  --bg2: #242424;        
+  --black: #eeeeee;     
+  --darkGrey: #b0b0b0;   
+  --grey: #a2acbb;       
+  --lightGrey: #7a7a7a; 
+  --border: #333333;     
+  --lightGrey2: #1a1a1a;     
+  --grey2: #444444;      
+  --red: #ff4d74;
+  --red2: #e05675;
+  --hover: #ff708d;
+  --transparentWhite: rgba(70, 70, 70, 0.292); 
+  --transparentBlack: rgba(166, 166, 166, 0.1);
+  --transparentWhite: rgba(55, 55, 55, 0.6);
+
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+
+.footer-logo {
+  width: 110px;
+}
+
+.nav-logo {
+  width: 90px;
+}
+
+main {
+  background-color: var(--main);
+  padding-top: 20px;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--red) !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--black) !important;
+  width: 12px !important;
+}
+
+input {
+  border: solid 1px var(--border);
+  transition: all 0.3s ease;
+  padding: 10px 25px;
+  background-color: var(--white);
+}
+
+
+input::placeholder {
+  color: var(--lightGrey);
+  font-size: 16px;
+  font-family: "Zain", sans-serif;
+}
+
+
+input:focus {
+  box-shadow: 0px 0px 4px var(--hover);
+  outline: none;
+}
+
+.accordion-header button:not(.collapsed) {
+  background-color: transparent;
+  color: var(--hover);
+}
+
+.accordion-item {
+  outline: none;
+}
+
+.accordion-header button:focus {
+  box-shadow: none;
+}
+
+
+@media (max-width:576px){
+  input::placeholder {
+  font-size: 14px;
+}
+}
+
+.loader {
+  position: relative;
+  min-height:300px ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader::before {
+  content: "";
+  width: 48px;
+  height: 48px;
+  border: 5px solid #fff;
+  border-bottom-color: var(--red);
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.page-title{
+  color: var(--black);
+}
+
+option{
+    background-color: var(--white);
+}
+
+.accordion-button{
+    font-weight: 600 ;
+    font-size: 16px;
+}
+
+.accordion{
+  --bs-accordion-bg: transparent !important;
+}
+
+button{
+  transition: all 0.3s ease;
+}

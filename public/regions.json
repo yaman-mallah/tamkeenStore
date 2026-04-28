@@ -1,0 +1,50 @@
+[
+    {
+        "id":1,
+        "flag": "/flags/usa.svg",
+        "regionName": "USA",
+        "shopName": "brocelle.com"
+    },
+    {
+        "id":2,
+        "flag": "/flags/china.svg",
+        "regionName": "China",
+        "shopName": "brocelle.cn"
+    },
+    {
+        "id":3,
+        "flag": "/flags/spain.svg",
+        "regionName": "Spain",
+        "shopName": "brocelle.es"
+    },
+    {
+        "id":4,
+        "flag": "/flags/great-britain.svg",
+        "regionName": "Great Britain",
+        "shopName": "brocelle.co.uk"
+    },
+    {
+        "id":5,
+        "flag": "/flags/uae.svg",
+        "regionName": "UAE",
+        "shopName": "brocelle.ae"
+    },
+    {
+        "id":6,
+        "flag": "/flags/saudi.svg",
+        "regionName": "Saudi Arabia",
+        "shopName": "brocelle.sa"
+    },
+    {
+        "id":7,
+        "flag": "/flags/qatar.svg",
+        "regionName": "Qatar",
+        "shopName": "brocelle.qa"
+    },
+    {
+        "id":8,
+        "flag": "/flags/lebanon.svg",
+        "regionName": "Lebanon",
+        "shopName": "brocelle.lb"
+    }
+]

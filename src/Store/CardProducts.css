@@ -1,0 +1,130 @@
+a{
+    text-decoration: none !important;
+}
+
+.ProductCard{
+    border: solid 1px var(--border);
+    border-radius: 6px;
+    background-color: var(--white);
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.ProductCard:hover{
+    transform: scale(1.02);
+    box-shadow: 0px 0px 4px var(--hover)
+}
+
+.ProductCard img{
+    width: 180px;
+    display: block;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+}
+
+.pdctPrice{
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--black);
+}
+
+.pdctDesc{
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--grey);
+    padding-inline-end: 80px;
+}
+
+.ProductCard > div{
+    margin-bottom: auto;
+    margin-top: 30px;
+}
+
+.ProductCard > div > div{
+    display: flex;
+    flex-direction: column;
+}
+
+.pdctTitle{
+    color: var(--black);
+}
+
+.cartCard, .wishlistCard{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.cartImg{
+    width: 100px;
+}
+
+.cartDetails{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+}
+
+.itemTitles{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cartTitle {
+    font-size: 14px;
+    color: var(--black);
+    font-weight: 500;
+}
+
+.cartQuantity{
+    font-size: 13px;
+    color: var(--grey);
+    font-weight: 500;
+}
+
+.delete{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cartPrice{
+    color: var(--black);
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.deleteBtn{
+    background-color: transparent;
+    border: none;
+    color: var(--darkGrey);
+}
+
+.deleteBtn:hover{
+    color: var(--hover)
+}
+
+.wishlistEnd{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.cartCard .cartBtn{
+    width: 170px;
+    height: 40px;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.addSection{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}

@@ -1,0 +1,26 @@
+.supplierCard{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.supplierCard img{
+    width: 40px;
+}
+
+.supplierCard div{
+    display: flex;
+    flex-direction: column;
+}
+
+.regionName{
+    color: var(--black);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.shopName{
+    color: var(--grey);
+    font-weight: 400;
+    font-size: 13px;
+}

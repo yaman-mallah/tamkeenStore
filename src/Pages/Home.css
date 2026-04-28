@@ -1,0 +1,444 @@
+.hero-bg {
+  background-color: var(--white);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 650px;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.hero-bg img {
+  max-width: 1000px;
+  position: absolute;
+  top: 10px;
+  inset-inline-start: 160px;
+  z-index: 3;
+}
+
+.hero-bg h1 {
+  color: #f0345d78;
+  position: absolute;
+  top: 5px;
+  inset-inline-start: 350px;
+  width: 40%;
+  padding: 15px;
+  border-radius: 15px;
+  font-family: "Zain", sans-serif;
+  font-weight: 700;
+  font-size: 150px;
+  z-index: 1;
+}
+
+.hero-span {
+  position: absolute;
+  color: var(--grey);
+  top: 30px;
+  inset-inline-start: 470px;
+  font-size: 18px;
+  z-index: 2;
+}
+
+.hero-bg h5 {
+  position: absolute;
+  color: var(--red);
+  font-weight: 600;
+  font-size: 20px;
+  width: 20%;
+  top: 260px;
+  inset-inline-start: 60px;
+}
+
+.hero-bg p {
+  color: var(--darkGrey);
+  position: absolute;
+  bottom: 170px;
+  width: 20%;
+  inset-inline-start: 60px;
+  border-radius: 15px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.offerSwiper {
+  height: 100%;
+  padding: 40px 10px;
+}
+
+.col-sec {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.col-sec h2 {
+  font-weight: 600;
+  font-size: 40px;
+  font-family: "Zain", sans-serif;
+  color: var(--black);
+}
+
+.col-sec span {
+  font-size: 16px;
+  color: var(--darkGrey);
+}
+
+.viewLink {
+  color: var(--black);
+  position: relative;
+}
+
+.viewLink::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  bottom: -5px;
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: 0%;
+  transition: all 0.3s ease;
+  background-color: var(--black);
+}
+
+.viewLink:hover {
+  color: var(--hover);
+}
+
+.viewLink:hover::before {
+  color: var(--hover);
+  background-color: var(--hover);
+  transform: scaleX(1);
+  height: 2px;
+}
+
+.dealBtn {
+  opacity: 0;
+  background-color: var(--black);
+  color: var(--white);
+  width: 200px;
+  border: none;
+  height: 40px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.OfferCard:hover .dealBtn {
+  opacity: 1;
+}
+
+.dealBtn:hover {
+  background-color: var(--hover);
+}
+
+@media (max-width: 1400px) {
+  .hero-bg h1 {
+    font-size: 120px;
+    inset-inline-start: 375px;
+    top: 25px;
+  }
+
+  .hero-span {
+    font-size: 16px;
+    inset-inline-start: 445px;
+    top: 40px;
+  }
+
+  .hero-bg h5 {
+    font-size: 18px;
+    top: 200px;
+  }
+
+  .hero-bg p {
+    bottom: 250px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .hero-bg img {
+    max-width: 800px;
+    inset-inline-start: 80px;
+  }
+
+  .hero-bg h1 {
+    font-size: 120px;
+    inset-inline-start: 230px;
+    top: 0px;
+  }
+
+  .hero-span {
+    font-size: 16px;
+    inset-inline-start: 310px;
+    top: 20px;
+  }
+
+  .hero-bg h5 {
+    font-size: 16px;
+    top: 200px;
+  }
+
+  .hero-bg p {
+    bottom: 250px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 992px) {
+  .dealBtn {
+    opacity: 1;
+  }
+
+  .hero-bg {
+    height: 550px;
+  }
+
+  .hero-bg img {
+    max-width: 700px;
+    inset-inline-start: 10px;
+  }
+
+  .hero-bg h1 {
+    font-size: 100px;
+    inset-inline-start: 160px;
+    top: 5px;
+  }
+
+  .hero-span {
+    font-size: 14px;
+    inset-inline-start: 220px;
+    top: 15px;
+  }
+
+  .hero-bg h5 {
+    font-size: 14px;
+    top: 140px;
+  }
+
+  .hero-bg p {
+    bottom: 220px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-bg {
+    height: 450px;
+  }
+
+  .hero-bg img {
+    max-width: 550px;
+    inset-inline-start: 10px;
+  }
+
+  .hero-bg h1 {
+    font-size: 80px;
+    inset-inline-start: 100px;
+    top: 0px;
+  }
+
+  .hero-span {
+    font-size: 12px;
+    inset-inline-start: 150px;
+    top: 10px;
+  }
+
+  .hero-bg h5 {
+    inset-inline-start: 30px;
+    font-size: 12px;
+    top: 130px;
+    width: 30%;
+  }
+
+  .hero-bg p {
+    inset-inline-start: 30px;
+    bottom: 200px;
+    font-size: 10px;
+    width: 30%;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-bg {
+    height: 350px;
+  }
+
+  .hero-bg img {
+    max-width: 450px;
+    inset-inline-start: 30px;
+    top: 35px;
+  }
+
+  .hero-bg h1 {
+    inset-inline-start: 70px;
+    top: 5px;
+  }
+
+  .hero-span {
+    inset-inline-start: 120px;
+  }
+
+  .hero-bg h5 {
+    top: 110px;
+    font-size: 11px;
+  }
+
+  .hero-bg p {
+    bottom: 110px;
+  }
+}
+
+.HomeProductsbg,
+.ElectronicProductsbg {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px !important;
+  min-height: 100%;
+  border-radius: 10px;
+}
+
+.HomeProductsbg{
+  background-image: url("/Homebg.png");
+}
+
+
+.ElectronicProductsbg{
+    background-image: url("/Electronicsbg.png");
+}
+
+.Source-title {
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--black);
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+.sourceBtn {
+  background-color: var(--white);
+  color: var(--black);
+  border: none;
+  border-radius: 6px;
+  width: 120px;
+  height: 40px;
+  font-weight: 500;
+}
+
+.sourceBtn:hover {
+  background-color: var(--hover)
+}
+
+.sources{
+  min-height: 250px;
+  padding: 0;
+}
+
+.sources .swiper{
+  padding: 0px 15px;
+}
+
+@media (max-width:992px){
+  .sources .swiper{
+  padding: 0px;
+}
+}
+
+
+.msgSuppliers{
+  background-image: url("/inquirybg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 40px 30px!important;
+  min-height: 100%;
+  min-width: 100%;
+  border-radius: 6px;
+}
+
+.SendCard{
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+}
+
+.SendCard h3{
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--black);
+    
+}
+
+input{
+    height: 40px;
+    
+}
+
+.SendCard input, textarea{
+    width: 100%;
+    border: solid 1px var(--lightGrey);
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: transparent;
+}
+
+.SendCard input::placeholder{
+    color: var(--black);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+textarea{
+    height: 70px;
+}
+
+.quantitySelector{
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.quantitySelector input{
+    width: 200px;
+}
+
+.quantitySelector select{
+    width: 110px;
+    height: 40px;
+    border: solid 1px var(--lightGrey);
+    border-radius: 6px;
+    padding: 5px;
+
+}
+
+.submit{
+    background-image: linear-gradient(180deg, var(--red), var(--red2));
+    color: #FFF;
+    border: none;
+    width: 120px;
+    height: 40px;
+    border-radius: 6px;
+}
+
+.submit:hover{
+    background-image: none;
+    background-color: var(--hover);
+    color: var(--white);
+}
+
+.msgTitle h2{
+    font-weight: 600;
+    font-size: 32px;
+    color: var(--white);
+
+}
+
+.msgTitle p{
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--white);
+}

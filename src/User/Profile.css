@@ -1,0 +1,225 @@
+.account-settings {
+  background-color: var(--white);
+  border-radius: 10px;
+  width: 100%;
+  padding: 30px;
+}
+
+.account-settings,
+.account-contents {
+  margin-top: 80px;
+  margin-bottom: 100px;
+}
+
+
+.account-settings .nav {
+  gap: 35px;
+  margin-top: 40px;
+}
+
+.account-settings .nav-link {
+  position: relative;
+  color: var(--grey);
+  font-weight: 500;
+  font-size: 17px;
+  padding: 0;
+}
+
+.account-settings .nav-link.active {
+  color: var(--black);
+}
+
+.account-settings .nav-link::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2.3px;
+  transform: scaleX(0);
+  transform-origin: 0%;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  background-color: var(--grey);
+  transition: all 0.3s ease;
+}
+
+.account-settings .nav-link:hover {
+  color: var(--hover);
+}
+
+.account-settings .nav-link:hover::after {
+  background-color: var(--hover);
+  transform: scaleX(1);
+}
+
+.account-settings h4{
+  color: var(--black);
+}
+
+.loader {
+  position: relative;
+  height: 100%;
+}
+
+.loader::before {
+  content: "";
+  width: 48px;
+  height: 48px;
+  border: 5px solid #fff;
+  border-bottom-color: var(--red);
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  position: absolute;
+  left: 50%;
+  top: 150px;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.userName {
+  color: var(--black);
+  font-size: 40px;
+  font-weight: 500;
+  font-family: "Zain", sans-serif;
+  text-transform: capitalize;
+  margin-bottom: 50px;
+}
+
+.profileDetails {
+  display: flex;
+  flex-direction: column;
+  /* background: linear-gradient(140deg, 
+    var(--lightGrey2) 35%, 
+    var(--red) 100%
+); */
+background-color: var(--white);
+  padding: 30px 60px;
+  border-radius: 10px;
+  gap: 20px;
+}
+
+.mainDetails{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--transparentRed);
+  backdrop-filter: blur(10px);          
+  box-shadow: 0 8px 32px 0 var(--transparentBlack);
+  align-items: center;
+  padding: 30px 10px;
+  border-radius: 10px;
+  gap: 20px;
+  padding: 20px 50px;
+  margin-bottom: 50px;
+}
+
+.profileDetails img {
+  width: 170px;
+  border-radius: 200px;
+}
+
+
+.profileName{
+  color: var(--black);
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.profileInfo{
+  color: var(--grey);
+  font-size: 16px;
+}
+
+.additionInfo{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  background: var(--transparentRed);
+  backdrop-filter: blur(10px);          
+  box-shadow: 0 8px 32px 0 var(--transparentBlack);
+  padding: 30px;
+  border-radius: 10px;
+  gap: 20px;
+}
+
+.additionInfo h4{
+  font-size: 20px;
+  color: var(--black);
+  margin-bottom: 20px;
+}
+
+.additionInfo > div{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.additionInfo h6{
+  margin: 0;
+}
+
+.updateTitle {
+  color: var(--black);
+  font-family: 30px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 992px) {
+  .account-settings,
+  .account-contents {
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  .account-settings .nav-link::after {
+    width: 50%;
+  }
+}
+
+.profile_section{
+  font-size: 25px;
+  color: var(--black);
+  margin-bottom: 30px;
+}
+
+.unavailable{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: var(--grey);
+  margin-bottom: 70px;
+}
+
+.inputRow{
+  gap: 40px;
+  justify-content: space-around;
+}
+
+.inputSection{
+  width: 100% ;
+}
+
+.AddressBtn{
+  background: linear-gradient(180deg, var(--red2), var(--red));
+  border: none;
+  border-radius: 10px;
+  width: 130px;
+  height: 40px;
+  color: var(--white);
+}
+
+.AddressBtn:hover{
+  background: var(--hover);
+}

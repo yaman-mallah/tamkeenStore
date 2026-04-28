@@ -1,0 +1,284 @@
+.auth-container {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.auth-bg {
+  background-image: url(/auth-bg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+}
+
+.auth-bg img {
+  width: 250px;
+}
+
+.auth-bg h2 {
+  font-size: 45px;
+  color: var(--white);
+  font-weight: 400;
+  margin: 0;
+}
+
+.auth-bg p {
+  color: var(--white);
+  font-size: 22px;
+  text-align: center;
+  margin: 0;
+  font-weight: 400;
+  padding-inline-start: 200px;
+  padding-inline-end: 200px;
+  line-height: 1.4;
+}
+
+@media (max-width: 992px) {
+  .auth-bg {
+    width: 100%;
+  }
+
+  .auth-bg img {
+    position: absolute;
+    top: 20px;
+    width: 150px;
+  }
+
+  .auth-bg h2 {
+    display: none;
+  }
+
+  .auth-bg p {
+    display: none;
+  }
+}
+
+.login-container,
+.otp-container,
+.register-container {
+  min-height: 100vh;
+  padding-inline-start: 80px;
+  padding-inline-end: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.login-container h2,
+.register-container h2,
+.otp-container h2 {
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--black);
+}
+
+.login-container span,
+.register-container span,
+.otp-container span {
+  font-size: 18px;
+  font-family: "Zain", sans-serif;
+  color: var(--lightGrey);
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.auth-form label {
+  color: var(--black);
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.auth-form input {
+  width: 100%;
+  height: 55px;
+  margin-bottom: 10px;
+  border-radius: 7px;
+}
+
+.auth-form button {
+  height: 50px;
+  width: 100%;
+  border: none;
+  background: linear-gradient(180deg, var(--red), var(--red2));
+  color: var(--white);
+  font-size: 18px;
+  border-radius: 7px;
+  margin-bottom: 10px;
+}
+
+.auth-form button:hover {
+  background: var(--hover);
+}
+
+.inputSection {
+  position: relative;
+}
+
+.inputIcon {
+  position: absolute;
+  font-size: 22px;
+  color: var(--red);
+  top: 50px;
+  right: 20px;
+}
+
+.sign-link, .home-link {
+  color: var(--red);
+  cursor: pointer;
+}
+
+.sign-link:hover, .home-link:hover {
+  color: var(--hover);
+}
+
+.home-link{
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.otpInput input {
+  width: 60px !important;
+  height: 60px !important;
+  border: solid 1px var(--border);
+  color: var(--red);
+  font-size: 26px;
+  padding: 0;
+  border-radius: 7px;
+}
+
+.resendBtn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+}
+
+.resendBtn span {
+  color: var(--red);
+  font-size: 16px;
+  position: absolute;
+  top: -24px;
+  left: 160px;
+}
+
+.codeSpan {
+  font-size: 16px !important;
+}
+
+.resendBtn button {
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  margin-top: 20px;
+  color: var(--red);
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.verify-btn {
+  height: 50px;
+  width: 100%;
+  border: none;
+  background-color: var(--red);
+  color: var(--white);
+  font-size: 18px;
+  border-radius: 7px;
+  margin-bottom: 10px;
+}
+
+.back-btn {
+  height: 50px;
+  width: 100%;
+  border: none;
+  background-color: var(--lightGrey);
+  color: var(--white);
+  font-size: 18px;
+  border-radius: 7px;
+  margin-bottom: 10px;
+}
+
+.back-btn:hover {
+  background-color: var(--border);
+}
+
+.auth-form input:focus, .otpInput input{
+    transform: scale(1.02);
+
+}
+
+@media (max-width: 992px) {
+  .login-container,
+  .otp-container,
+  .register-container {
+    min-height: fit-content;
+    padding: 50px 30px;
+    background-color: var(--white);
+    position: absolute;
+    border-radius: 10px;
+    top: 140px;
+    left: 50px;
+    right: 50px;
+  }
+
+  .login-container h2,
+  .register-container h2,
+  .otp-container h2 {
+    font-size: 26px;
+  }
+
+  .login-container span,
+  .register-container span,
+  .otp-container span {
+    font-size: 16px;
+  }
+
+  .otpInput input {
+    width: 50px !important;
+    height: 50px !important;
+    color: var(--red);
+  }
+
+  .inputIcon {
+    font-size: 18px;
+  }
+
+  .auth-form label {
+    font-size: 14px;
+  }
+
+  .auth-form input {
+    height: 50px;
+  }
+
+  .auth-form button {
+    height: 45px;
+    font-size: 16px;
+  }
+}
+
+.auth-form button:disabled{
+  background: var(--hover) ;
+  opacity: 0.7;
+}

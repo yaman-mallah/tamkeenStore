@@ -1,0 +1,29 @@
+.ServiceTitle{
+    font-size: 48px;
+    font-family: 'Zain' , sans-serif;
+    font-weight: 600;
+    margin-bottom: 80px;
+    text-align: center;
+    color: var(--black);
+}
+
+.serviceBg{
+    height: 400px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.service-subtitle{
+    font-size: 35px;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 20px;
+}
+
+.about-par{
+    color: var(--darkGrey);
+    font-weight: 400;
+    font-size: 16px;
+}

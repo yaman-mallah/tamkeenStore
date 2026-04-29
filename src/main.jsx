@@ -8,6 +8,7 @@ import { ThemeProvider } from "./Context/ThemeContext.jsx";
 import { LangProvider } from "./Context/LangContext.jsx";
 import { CartProvider } from "./Context/CartContext.jsx";
 import { WishlistProvider } from "./Context/WishlistContext.jsx";
+import { SearchProvider } from "./Context/SearchContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -17,7 +18,9 @@ createRoot(document.getElementById("root")).render(
           <LangProvider>
             <ThemeProvider>
               <BrowserRouter>
-                <App />
+                <SearchProvider>
+                  <App />
+                </SearchProvider>
               </BrowserRouter>
             </ThemeProvider>
           </LangProvider>

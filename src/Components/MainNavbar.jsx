@@ -26,6 +26,7 @@ import { Link, NavLink, useNavigate } from "react-router";
 import { useContext, useMemo, useState } from "react";
 import { AuthContext } from "../Context/AuthContext";
 import { ThemeContext } from "../Context/ThemeContext";
+import { SearchContext } from "../Context/SearchContext";
 import { LangContext } from "../Context/LangContext";
 import { Col, Row } from "react-bootstrap";
 import { Images } from "../Utils/Imgs";
@@ -37,7 +38,8 @@ const MainNavbar = () => {
   const { userInfo } = useContext(AuthContext);
   const { mode, toggleMode } = useContext(ThemeContext);
   const { lang, toggleLang } = useContext(LangContext);
-  const { cartItems,updateQuantity, totalCartPrice } = useContext(CartContext);
+  const { setSearchText ,setSubmited } = useContext(SearchContext);
+  const { cartItems, updateQuantity, totalCartPrice } = useContext(CartContext);
 
   const navigate = useNavigate()
 
@@ -46,8 +48,13 @@ const MainNavbar = () => {
   const handleShowCart = () => setShowCart(true);
   const [showCart, setShowCart] = useState(false);
 
-  const subTotal = (qty,price)=>{
+  const subTotal = (qty, price) => {
     return qty * price
+  }
+
+
+  const search = () => {
+
   }
 
   return (
@@ -91,8 +98,20 @@ const MainNavbar = () => {
               </Offcanvas.Header>
               <Offcanvas.Body className="ps-4">
                 <Nav className="justify-content-center flex-grow-1 pe-lg-3 pe-0 ms-lg-4">
-                  <form className="SearchForm">
-                    <input type="text" placeholder="Search" />
+                  <form className="SearchForm"
+                    onSubmit={(e) => {
+                      e.preventDefault()
+                      setSubmited(e=>e=!e)
+                      navigate('/products')
+                    }}
+                  >
+                    <input
+                      type="text"
+                      placeholder="Search"
+                      onChange={(e) => {
+                        setSearchText(e.target.value)
+                      }}
+                    />
                     <select name="" id="" value={"all"}>
                       <option value="all" hidden>
                         All category
@@ -199,74 +218,74 @@ const MainNavbar = () => {
                     <div>
                       {
                         cartItems?.map((item) => (
-                      <div
-                        style={{
-                          borderBottom: "solid 2px var(--border)",
-                          paddingBottom: "20px",
-                          paddingTop: "20px"
-                        }}
-                        key={item.id}
-                      >
-                        <CartCard
-                          cartImg={item.product.image}
-                          cartTitle={item.product.name}
-                          cartPrice={subTotal(item.quantity, item.product.price)}
-                          cartQuantity={item.quantity}
-                          cartId={item.id}
-                        >
-                          <div className="quantityBtn">
-                            <button
-                              style={{
-                                borderStartStartRadius: "10px",
-                                borderEndStartRadius: "10px",
-                                border: "solid 2px var(--border)",
-                                borderInlineEnd: "none",
-                                width: "30px",
-                                height: "35px",
-                              }}
-                              onClick={() => {
-                                updateQuantity(item.product.id, item.quantity - 1);
-                              }}
-                              disabled={item.quantity === 1 ? "disabled" : ""}
+                          <div
+                            style={{
+                              borderBottom: "solid 2px var(--border)",
+                              paddingBottom: "20px",
+                              paddingTop: "20px"
+                            }}
+                            key={item.id}
+                          >
+                            <CartCard
+                              cartImg={item.product.image}
+                              cartTitle={item.product.name}
+                              cartPrice={subTotal(item.quantity, item.product.price)}
+                              cartQuantity={item.quantity}
+                              cartId={item.id}
                             >
-                              -
-                            </button>
-                            <span style={{ width: "40px", height: "35px" }}>
-                              {item.quantity}
-                            </span>
-                            <button
-                              style={{
-                                borderEndEndRadius: "10px",
-                                borderStartEndRadius: "10px",
-                                border: "solid 2px var(--border)",
-                                borderInlineStart: "none",
-                                width: "30px",
-                                height: "35px",
-                              }}
-                              onClick={() => {
-                                
-                                updateQuantity(item.product.id, item.quantity + 1);
-                              }}
-                              disabled={item.quantity === 10 ? "disabled" : ""}
-                            >
-                              +
-                            </button>
+                              <div className="quantityBtn">
+                                <button
+                                  style={{
+                                    borderStartStartRadius: "10px",
+                                    borderEndStartRadius: "10px",
+                                    border: "solid 2px var(--border)",
+                                    borderInlineEnd: "none",
+                                    width: "30px",
+                                    height: "35px",
+                                  }}
+                                  onClick={() => {
+                                    updateQuantity(item.product.id, item.quantity - 1);
+                                  }}
+                                  disabled={item.quantity === 1 ? "disabled" : ""}
+                                >
+                                  -
+                                </button>
+                                <span style={{ width: "40px", height: "35px" }}>
+                                  {item.quantity}
+                                </span>
+                                <button
+                                  style={{
+                                    borderEndEndRadius: "10px",
+                                    borderStartEndRadius: "10px",
+                                    border: "solid 2px var(--border)",
+                                    borderInlineStart: "none",
+                                    width: "30px",
+                                    height: "35px",
+                                  }}
+                                  onClick={() => {
+
+                                    updateQuantity(item.product.id, item.quantity + 1);
+                                  }}
+                                  disabled={item.quantity === 10 ? "disabled" : ""}
+                                >
+                                  +
+                                </button>
+                              </div>
+                            </CartCard>
                           </div>
-                        </CartCard>
-                      </div>
-                    ))
+                        ))
                       }
-                    <div className="checkoutCart">
-                      <div className="totalPrice">
-                        <span>Total Price: </span>
-                        <span>{`${totalCartPrice}$`}</span>
+                      <div className="checkoutCart">
+                        <div className="totalPrice">
+                          <span>Total Price: </span>
+                          <span>{`${totalCartPrice}$`}</span>
+                        </div>
+                        <button className='checkoutBtn'
+                          onClick={() => {
+                            navigate('/checkout')
+                          }}
+                        >Checkout</button>
                       </div>
-                      <button className='checkoutBtn'
-                    onClick={()=>{
-                      navigate('/checkout')
-                    }}
-                    >Checkout</button>
-                    </div>
                     </div>
 
                   ) : (

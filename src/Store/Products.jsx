@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { NavLink } from "react-router";
 import Accordion from "react-bootstrap/Accordion";
@@ -6,11 +6,9 @@ import Newsletter from "../Components/Newsletter";
 import "./Products.css";
 import { api_config } from "../Config/API";
 import CardProducts from "./CardProducts";
+import { SearchContext } from "../Context/SearchContext";
 
-
-import { offset } from "dom-helpers";
-
-
+import { offset } from "dom-helpers"
 const Products = () => {
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
@@ -26,6 +24,8 @@ const Products = () => {
   });
   const [pagination, setPagination] = useState({});
 
+  const { searchText ,submited } = useContext(SearchContext);
+
   const base_url = api_config.BASE_URL;
   const productsPath = api_config.ENDPOINTS.PRODUCT;
   const categoryPath = api_config.ENDPOINTS.CATEGORY;
@@ -40,7 +40,10 @@ const Products = () => {
 
   const CallProductsAPI = () => {
     setInitialize(false);
-    fetch(`${base_url}${productsPath}?${params}`)
+    fetch(`${base_url}${productsPath}?${params}&search=${searchText}`,{
+      method:'GET',
+      
+    })
       .then((res) => {
         if (!res.ok) {
           throw new Error("No products found");
@@ -60,6 +63,7 @@ const Products = () => {
         setInitialize(true);
       });
   };
+  
 
   const CallCategoriesAPI = () => {
     fetch(`${base_url}${categoryPath}`)
@@ -88,6 +92,11 @@ const Products = () => {
   useEffect(() => {
     CallCategoriesAPI();
   }, []);
+
+
+  useEffect(()=>{
+    CallProductsAPI()
+  },[submited])
 
     //animation 
 

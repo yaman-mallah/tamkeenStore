@@ -180,7 +180,7 @@ export const CartProvider = ({ children }) => {
   const totalCartPrice = useMemo(() => {
     let total = 0;
 
-    cartItems.forEach((item) => {
+    cartItems?.forEach((item) => {
       total += item.quantity * item.product.price;
     });
 

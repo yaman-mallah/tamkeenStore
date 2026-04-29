@@ -7,6 +7,10 @@ import "./Products.css";
 import { api_config } from "../Config/API";
 import CardProducts from "./CardProducts";
 
+
+import { offset } from "dom-helpers";
+
+
 const Products = () => {
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
@@ -84,6 +88,9 @@ const Products = () => {
   useEffect(() => {
     CallCategoriesAPI();
   }, []);
+
+    //animation 
+
 
   if (!initialize) return <div className="loader"></div>;
 
@@ -238,7 +245,7 @@ const Products = () => {
                 </select>
               </Col>
             </Row>
-            <Row>
+            <Row >
               {products.map((pdct) => (
                 <Col lg={4} md={6} sm={12} className="mb-3" key={pdct.id}>
                   <NavLink to={`/products/${pdct.id}`}>

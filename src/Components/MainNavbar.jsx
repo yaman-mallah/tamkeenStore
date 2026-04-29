@@ -195,10 +195,10 @@ const MainNavbar = () => {
                   <Offcanvas.Title>CART</Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
-                  {cartItems.length !== 0 ? (
+                  {cartItems?.length !== 0 ? (
                     <div>
                       {
-                        cartItems.map((item) => (
+                        cartItems?.map((item) => (
                       <div
                         style={{
                           borderBottom: "solid 2px var(--border)",

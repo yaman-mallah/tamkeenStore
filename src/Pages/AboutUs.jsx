@@ -1,12 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Newsletter from "../Components/Newsletter";
 import "./OurServices.css";
 import { Images } from "../Utils/Imgs";
+import AOS from "aos";
+
+import "aos/dist/aos.css";
 
 <style></style>;
 
 const AboutUs = () => {
+
+  //animation 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,   
+      easing: "cubic-bezier(0.25, 0.1, 0.17, 0.8)",
+    });
+
+  }, []);
   return (
     <>
       <Container>
@@ -15,10 +28,10 @@ const AboutUs = () => {
             <h1 className="ServiceTitle">About Us</h1>
           </Col>
         </Row>
-        <Row className="mb-5">
+        <Row className="mb-5" data-aos={'fade-up'} data-aos-delay="200">
           <Col lg={6} sm={12}>
             <h2 className="service-subtitle">Who We Are</h2>
-            <p className="about-par">
+            <p className="about-par" >
               Brocelle is your all-in-one e-commerce destination, created to
               simplify the way you shop online. In a world full of endless
               options, we bring everything together in one place—making it
@@ -36,7 +49,7 @@ const AboutUs = () => {
             }}
           ></Col>
         </Row>
-        <Row className="mb-5">
+        <Row className="mb-5" data-aos={'fade-up'} data-aos-delay="100">
           <Col
             lg={6}
             sm={12}
@@ -57,7 +70,7 @@ const AboutUs = () => {
             </p>
           </Col>
         </Row>
-        <Row>
+        <Row  data-aos={'fade-up'} data-aos-delay="100">
           <Col sm={12}>
             <h2 className="service-subtitle">Our Mission & Why Choose Brocelle</h2>
             <p className="about-par">
@@ -73,7 +86,7 @@ const AboutUs = () => {
             </p>
           </Col>
         </Row>
-                <Row>
+        <Row  data-aos={'fade-up'} data-aos-delay="100">
           <Col
             sm={12}
             className="serviceBg"
